@@ -20,13 +20,11 @@ func main() {
 
 	min_side := separation(side1, side2)
 
-	var w_cube int
-	var h_cube int
-	w_cube = side1 / min_side
-	h_cube = side2 / min_side
+	w_cube := side1 / min_side
+	h_cube := side2 / min_side
 
 	for h_cube > 0 {
-		h_cube --
+		h_cube--
 
 		repeatedString := strings.Repeat(" ☐ ", w_cube)
 		fmt.Println(repeatedString)
@@ -34,7 +32,7 @@ func main() {
 
 	fmt.Println()
 	fmt.Println("----------------------------------")
-	fmt.Print("Ответ:", min_side, "x", min_side, " в участках ", w_cube, "x", side2 / min_side)
+	fmt.Print("Ответ:", min_side, "x", min_side, " в участках ", w_cube, "x", side2/min_side)
 
 	var choose string
 
@@ -47,7 +45,7 @@ func main() {
 
 }
 
-func separation(w int, h int) int {
+func separation(w, h int) int {
 
 	if w < h {
 		big_side := h
